@@ -28,7 +28,7 @@ def main(args):
         with writer(args.output) as w:
             for dataset in iterate_datasets(f):
                 try:
-                    w.write(dataset[:], dataset.name.lstrip("/").replace("/", "."))
+                    w.write(dataset[()], dataset.name.lstrip("/").replace("/", "."))
                 except Exception as e:
                     logging.warn("{}".format(e.message))
                     exit_status = 1
